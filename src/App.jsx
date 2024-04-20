@@ -19,7 +19,7 @@ function App() {
   //   return savedContacts || initialContacts;
   // });
   
-  const [filterName, setFilterName] = useState("");
+  // const [filterName, setFilterName] = useState("");
 
   // useEffect(() => {
   //   localStorage.setItem("newContacts", JSON.stringify(contacts));
@@ -53,7 +53,7 @@ function App() {
     <div>
       <h1>Phonebook</h1>
       <ContactForm />
-      <SearchBox value={filterName} onFilter={setFilterName} />
+      <SearchBox  />
       <ContactList />
     </div>
   )
