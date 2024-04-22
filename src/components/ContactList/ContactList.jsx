@@ -16,13 +16,13 @@ const ContactList = () => {
 
   return (
     <ul className={css.list}>
-      {compareName.map((contact) => (
-          <li className={css.item} key={contact.id}>
-          <Contact
-              contact={contact}
-            />
-          </li>
-        ))}
+      {compareName.map((contact) => {
+          return (
+            <li key={contact.id}>
+              <Contact contact={contact} />
+            </li>
+          );
+        })}
     </ul>
   )
 }

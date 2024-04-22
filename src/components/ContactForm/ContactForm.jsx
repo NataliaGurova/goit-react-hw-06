@@ -22,14 +22,12 @@ const FormSchema = Yup.object().shape({
 const ContactForm = () => {
   const dispatch = useDispatch()
   const handleSubmit = (values, actions) => {
-   const newContact = {
-      id: nanoid(),
-      name: values.name,
-      number: values.number,
-    };
-    // values.name.trim()
-    console.log(values);
-    dispatch(addContact(newContact));
+  //  const newContact = {
+  //     id: nanoid(),
+  //     name: values.name,
+  //     number: values.number,
+  //   };
+    dispatch(addContact(values.name, values.number));
 
 		actions.resetForm();   
 	};
