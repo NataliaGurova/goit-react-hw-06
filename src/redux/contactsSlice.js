@@ -8,6 +8,9 @@ const initialState = initialContacts;
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
+  selectors: {
+        selectContacts: state => state,
+  },
   reducers: {
     // Standart case
     addContact: {
@@ -31,9 +34,27 @@ const contactsSlice = createSlice({
   }
 });
 
-export const selectContacts = (state) => {
-  return state.contacts;
-};
-
+export const { selectContacts } = contactsSlice.selectors;
 export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
+
+// export const selectContacts = (state) => {
+  //   return state.contacts;
+  // };
+  
+  
+// const slice = createSlice({
+//   name: 'contacts',  // name slice
+//   initialState: {
+//     items: [],
+//     status: null,
+//     error: null,
+// 	},
+//   reducers: {},
+//   selectors: {
+//     selectContacts: state => state,
+//     selectMultiple: (state, multiplier: number) => state*multiplier
+// }
+// })
+
+// export const { selectContacts, selectMultiple } = slice.selectors;
